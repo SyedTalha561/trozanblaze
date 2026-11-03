@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+backup-wp-original/
+.vscode/
+.idea/

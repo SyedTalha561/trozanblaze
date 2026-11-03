@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trozan Blaze – AI Content Creator</title>
+  <meta name="description" content="Autonomous Intelligence, Adelaide Hub, Digital Wealth and AI Content Creation by Trozan Blaze.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Confetti Canvas Overlay -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="site-wrapper">
+
+    <!-- ====================================================================
+         HEADER & TOP NAVIGATION
+         Top whitespace < 1cm (~12px padding).
+         Top-Left: Just Trozan Blaze & AI Content Creator.
+         Top-Right: Menu dropdown with AI News, Products, Contact.
+         ==================================================================== -->
+    <header class="site-header">
+      <a href="index.html" class="brand-container">
+        <img src="assets/logo.jpg" alt="Trozan Blaze Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <div class="brand-name">
+            Trozan<span class="accent">Blaze</span>
+          </div>
+          <div class="brand-subtitle">AI Content Creator</div>
+        </div>
+      </a>
+
+      <!-- Right Top Menu Dropdown -->
+      <nav class="nav-menu-wrapper" aria-label="Main Navigation">
+        <button id="menu-toggle" class="menu-toggle-btn" aria-haspopup="true" aria-expanded="false">
+          <span>Menu</span>
+          <span class="menu-arrow">▾</span>
+        </button>
+        <ul id="menu-dropdown" class="menu-dropdown">
+          <li class="menu-item">
+            <a href="ai-news.html" class="menu-link">
+              <span>📰 AI News</span>
+              <span class="badge">5 Articles</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="products.html" class="menu-link">
+              <span>⚡ Products</span>
+              <span class="badge">VIP</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#contact" class="menu-link">
+              <span>✉️ Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ====================================================================
+         LIVE WIRE RUNNING TICKER
+         Continuously moving right to left with daily dynamic updates
+         ==================================================================== -->
+    <div class="live-wire-container">
+      <div class="live-wire-badge">
+        <span class="pulsing-dot"></span>
+        <span id="ticker-date-badge">🔴 Live Wire</span>
+      </div>
+      <div class="ticker-track-wrapper">
+        <div class="ticker-track">
+          <div id="ticker-track-1" class="ticker-content">
+            <span class="ticker-item"><span class="tag">🔒 [VIP INSIDER]</span> Raiz 3-Year DCA Audit: Eliminating 37% Australian ETF Overlap</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [VIP PROMPT]</span> 15 Production AI Prompts That Make Life 10x Easier</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [ADELAIDE AFL]</span> Crows & Port Adelaide Pre-Season Tactical Breakdown</span>
+            <span class="ticker-divider">|</span>
+          </div>
+          <!-- Duplicate track for seamless infinite marquee loop -->
+          <div id="ticker-track-2" class="ticker-content">
+            <span class="ticker-item"><span class="tag">🔒 [VIP INSIDER]</span> Raiz 3-Year DCA Audit: Eliminating 37% Australian ETF Overlap</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [VIP PROMPT]</span> 15 Production AI Prompts That Make Life 10x Easier</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [ADELAIDE AFL]</span> Crows & Port Adelaide Pre-Season Tactical Breakdown</span>
+            <span class="ticker-divider">|</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         SOCIAL DOCK
+         Instagram (updated), Facebook (updated), Telegram; TikTok removed.
+         ==================================================================== -->
+    <div class="social-dock">
+      <a href="https://t.me/BeastgravityBot" target="_blank" rel="noopener noreferrer" class="social-btn telegram">
+        ✈️ Telegram: @BeastgravityBot
+      </a>
+      <a href="https://www.instagram.com/trozanblaze/" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+        📸 Instagram
+      </a>
+      <a href="https://www.facebook.com/TrozanTalHa" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
+        📘 Facebook
+      </a>
+    </div>
+
+    <!-- ====================================================================
+         MAIN INTELLIGENCE CARD CONTAINER
+         ==================================================================== -->
+    <main class="main-card">
+
+      <!-- Corner Brand & Bot Daemon Status -->
+      <section class="hero-brand-bar">
+        <div>
+          <h1 class="hero-brand-title">
+            ⚡ TROZAN<span class="accent">BLAZE</span>
+          </h1>
+          <div class="hero-brand-subtitle">
+            Autonomous Intelligence • Adelaide Hub • Digital Wealth
+          </div>
+        </div>
+        <div class="bot-status-pill">
+          <span class="status-indicator"></span>
+          <span id="adelaide-clock">BOT BEASTGRAVITY ONLINE | ADELAIDE +10:30</span>
+        </div>
+      </section>
+
+      <!-- Live Telemetry Dashboard -->
+      <section class="telemetry-grid">
+        <div class="telemetry-card">
+          <div class="telemetry-tag">📍 Adelaide, SA</div>
+          <div class="telemetry-value">Live Local</div>
+          <div class="telemetry-info">☀️ 22°C Clear • UV 4 Moderate</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-tag">📈 Micro-Investing Yield</div>
+          <div class="telemetry-value green">+9.1% CAGR</div>
+          <div class="telemetry-info muted">$5.00 / Day Raiz DCA Model</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-tag">🏉 Adelaide Sports Radar</div>
+          <div class="telemetry-value">Showdown Watch</div>
+          <div class="telemetry-info muted">AFL Pre-Season • Adelaide Oval</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-tag">🤖 Autonomous Engine</div>
+          <div class="telemetry-value cyan">Active 24/7</div>
+          <div class="telemetry-info green">3 Daemons Running Headless</div>
+        </div>
+      </section>
+
+      <!-- Raiz Referral Bonus Card -->
+      <section class="bonus-card">
+        <span class="bonus-badge">🎁 Exclusive Investor Welcome Bonus</span>
+        <h2 class="bonus-title">Invest Your First $5.00 & Claim a Free $5.00 Cash Bonus</h2>
+        <p class="bonus-desc">
+          Start micro-investing with Raiz. When you sign up using our community referral code and make your first $5.00 investment, we both receive a free $5.00 bonus deposited directly into our portfolios!
+        </p>
+
+        <div class="bonus-steps-grid">
+          <div>
+            <div class="step-number">STEP 1</div>
+            <div class="step-label">Sign Up with Link</div>
+            <div class="step-desc">Use code <strong style="color:var(--cyan)">L8FJR3</strong></div>
+          </div>
+          <div>
+            <div class="step-number">STEP 2</div>
+            <div class="step-label">Verify Account</div>
+            <div class="step-desc">Quick 2-minute identity verification</div>
+          </div>
+          <div>
+            <div class="step-number">STEP 3</div>
+            <div class="step-label">Invest $5 or More</div>
+            <div class="step-desc">Make your first $5 deposit</div>
+          </div>
+          <div>
+            <div class="step-number">STEP 4</div>
+            <div class="step-label">Get $5 Bonus</div>
+            <div class="step-desc">Free $5 cash bonus deposited</div>
+          </div>
+        </div>
+
+        <div class="bonus-action-row">
+          <div class="promo-code-box">
+            Code: <strong>L8FJR3</strong>
+            <button id="copy-code-btn" class="copy-btn" title="Copy Referral Code">COPY</button>
+          </div>
+          <a href="https://raizinvest.go.link/aKoJc" target="_blank" rel="noopener noreferrer" class="claim-btn">
+            Claim Free $5 Bonus on Raiz →
+          </a>
+          <span class="bonus-disclaimer">T&Cs Apply • Australian Residents</span>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           INTERACTIVE COMPOUNDING CALCULATOR & SLIDING BAR
+           (Requirement 8: Slider allowing users to adjust daily spend and see
+            how much they earn, dynamically updating the table in real-time)
+           ================================================================== -->
+      <section id="compounding-calc" class="compounding-calculator">
+        <div class="calc-header">
+          <h2 class="calc-title">
+            <span>⚡ Interactive Daily Compounding Engine</span>
+          </h2>
+          <p class="calc-subtitle">
+            Adjust the sliding bar to see how daily micro-investments grow at <strong>9.1% CAGR</strong> over time without market timing:
+          </p>
+        </div>
+
+        <!-- Sliding Bar Controls -->
+        <div class="slider-controls-grid">
+          <!-- Slider 1: Daily Deposit -->
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <label for="daily-spend-slider" class="slider-label">Daily Micro-Investment:</label>
+              <span id="daily-spend-value" class="slider-live-value">$5.00 / Day</span>
+            </div>
+            <input type="range" id="daily-spend-slider" class="range-slider" min="1" max="50" step="1" value="5" aria-label="Daily Micro-Investment Amount">
+            <div class="slider-ticks">
+              <span>$1/Day</span>
+              <span>$5/Day</span>
+              <span>$15/Day</span>
+              <span>$30/Day</span>
+              <span>$50/Day</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Horizon -->
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <label for="horizon-slider" class="slider-label">Time Horizon:</label>
+              <span id="horizon-value" class="slider-live-value">5 Years</span>
+            </div>
+            <input type="range" id="horizon-slider" class="range-slider" min="1" max="20" step="1" value="5" aria-label="Investment Time Horizon in Years">
+            <div class="slider-ticks">
+              <span>1 Year</span>
+              <span>3 Years</span>
+              <span>5 Years</span>
+              <span>10 Years</span>
+              <span>20 Years</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Results Counters -->
+        <div class="calc-results-cards">
+          <div class="result-card">
+            <div class="result-card-label">Your Total Deposits</div>
+            <div id="stat-deposits" class="result-card-number">$9,125</div>
+            <div class="result-card-note">Principal contributed</div>
+          </div>
+          <div class="result-card highlight">
+            <div class="result-card-label">Estimated Portfolio Value</div>
+            <div id="stat-portfolio" class="result-card-number green">$11,850</div>
+            <div class="result-card-note">Compounded at 9.1% CAGR</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Free Compound Profit</div>
+            <div id="stat-profit" class="result-card-number cyan">+$2,725</div>
+            <div class="result-card-note">Pure compound growth</div>
+          </div>
+        </div>
+
+        <!-- Dynamic Live Compounding Table -->
+        <div class="table-wrapper">
+          <table class="compounding-table">
+            <thead>
+              <tr>
+                <th>HORIZON</th>
+                <th>YOUR TOTAL DEPOSITS</th>
+                <th>ESTIMATED VALUE</th>
+                <th>FREE COMPOUND PROFIT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="tier-row-1">
+                <td class="horizon-cell">1 Year</td>
+                <td id="tier-1-deposits" class="deposit-cell">$1,825</td>
+                <td id="tier-1-value" class="value-cell">$1,910</td>
+                <td id="tier-1-profit" class="profit-cell">+$85</td>
+              </tr>
+              <tr id="tier-row-3">
+                <td class="horizon-cell">3 Years</td>
+                <td id="tier-3-deposits" class="deposit-cell">$5,475</td>
+                <td id="tier-3-value" class="value-cell">$6,280</td>
+                <td id="tier-3-profit" class="profit-cell">+$805</td>
+              </tr>
+              <tr id="tier-row-5" class="active-horizon">
+                <td class="horizon-cell">5 Years</td>
+                <td id="tier-5-deposits" class="deposit-cell">$9,125</td>
+                <td id="tier-5-value" class="value-cell">$11,850</td>
+                <td id="tier-5-profit" class="profit-cell">+$2,725</td>
+              </tr>
+              <tr id="tier-row-10">
+                <td class="horizon-cell">10 Years</td>
+                <td id="tier-10-deposits" class="deposit-cell">$18,250</td>
+                <td id="tier-10-value" class="value-cell">$30,550</td>
+                <td id="tier-10-profit" class="profit-cell">+$12,300</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Content Pillars -->
+      <section class="pillars-grid">
+        <div class="pillar-card wealth">
+          <span class="pillar-tag">WEALTH & INVESTING</span>
+          <h3 class="pillar-title">The 37% Australian ETF Overlap</h3>
+          <p class="pillar-desc">Why holding STW, SFY, and VAS simultaneously leads to triple-concentration in identical banks and mining stocks.</p>
+        </div>
+        <div class="pillar-card ai">
+          <span class="pillar-tag">AI TECH & PROMPTS</span>
+          <h3 class="pillar-title">Autonomous Agent Workflows</h3>
+          <p class="pillar-desc">How background Python agents monitor inboxes, crawl markets, and publish content 24/7 without opening any app.</p>
+        </div>
+        <div class="pillar-card adelaide">
+          <span class="pillar-tag">ADELAIDE PULSE</span>
+          <h3 class="pillar-title">Showdown Radar & Dining Gems</h3>
+          <p class="pillar-desc">AFL Crows & Port Adelaide pre-season tactics, plus the best artisan brunch roasters on Leigh St and Peel St.</p>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           LATEST AI NEWS ARTICLES PREVIEW
+           ================================================================== -->
+      <section id="ai-news">
+        <div class="section-header-row">
+          <h2 class="section-title">📰 Latest AI News & Insights</h2>
+          <a href="ai-news.html" class="section-view-all">View All 5 Articles →</a>
+        </div>
+
+        <div class="articles-grid">
+          <!-- Article 1 -->
+          <article class="article-card">
+            <div class="article-thumb-wrapper">
+              <img src="assets/posts/photo-for-ai-prompt.jpeg" alt="15 AI Prompts" class="article-thumb" loading="lazy">
+              <span class="article-category-badge">AI News</span>
+            </div>
+            <div class="article-body">
+              <div class="article-date">November 1, 2026 • by Trozan Blaze</div>
+              <h3 class="article-card-title">15 Game-Changing AI Prompts That Make Life 10x Easier (Tested & Proven)</h3>
+              <p class="article-excerpt">
+                Curated and tested high-impact prompts for productivity, creative writing, autonomous task execution, and deep research workflows.
+              </p>
+              <a href="ai-news.html#article-prompts" class="article-read-btn">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="article-card">
+            <div class="article-thumb-wrapper">
+              <img src="assets/posts/image.webp" alt="AI in the Future of Work" class="article-thumb" loading="lazy">
+              <span class="article-category-badge">Work & Future</span>
+            </div>
+            <div class="article-body">
+              <div class="article-date">August 19, 2024 • by Trozan Blaze</div>
+              <h3 class="article-card-title">AI in the Future of Work: Transforming Industries & Redefining Roles</h3>
+              <p class="article-excerpt">
+                How AI is reshaping modern business paradigms, supercharging human creativity, and automating administrative workflows.
+              </p>
+              <a href="ai-news.html#article-work" class="article-read-btn">Read Full Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="article-card">
+            <div class="article-thumb-wrapper">
+              <img src="assets/posts/dallc2b7e-2024-03-29-13.31.48-a-child-wearing-vr-goggles-surrounded-by-stars-and-planets-reaching-out-to-touch-a-glowing-celestial-body-expressing-wonder-and-amazement.-the-scen.webp" alt="VR Learning" class="article-thumb" loading="lazy">
+              <span class="article-category-badge">Immersive Tech</span>
+            </div>
+            <div class="article-body">
+              <div class="article-date">March 29, 2024 • by Trozan Blaze</div>
+              <h3 class="article-card-title">Beyond the Horizon: Embracing the Heart of Learning through VR</h3>
+              <p class="article-excerpt">
+                Stepping beyond classical classrooms: virtual reality as an emotional journey unlocking creativity and unbounded potential.
+              </p>
+              <a href="ai-news.html#article-vr" class="article-read-btn">Read Full Article →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           PRODUCTS SECTION (Requirement 6: Digital Products)
+           ================================================================== -->
+      <section id="products" class="products-section">
+        <div class="section-header-row">
+          <h2 class="section-title">⚡ Digital Products & Blueprints</h2>
+          <a href="products.html" class="section-view-all">View All Products →</a>
+        </div>
+        <p style="color:#94a3b8;font-size:0.95rem;margin-bottom:20px">
+          Production-grade AI prompts, autonomous agent architectures, and financial modeling tools built for high performers.
+        </p>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <span class="product-badge cyan">DIGITAL PROMPTS</span>
+            <h3 class="product-name">15 Production AI Prompts Vault</h3>
+            <p class="product-desc">
+              Battle-tested prompt templates engineered for immediate ROI across copywriting, code architecture, and market analysis.
+            </p>
+            <ul class="product-features-list">
+              <li>Instant Markdown & Notion download</li>
+              <li>Tested on Gemini 1.5/2.0, Claude 3.5, GPT-4o</li>
+              <li>Includes prompt variables & execution frameworks</li>
+            </ul>
+            <a href="products.html" class="product-btn">Get VIP Access →</a>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <span class="product-badge gold">COMING SOON</span>
+            <h3 class="product-name">Autonomous Agent Blueprints</h3>
+            <p class="product-desc">
+              Complete Python daemon code and setup guide to run headless agents that monitor inboxes, crawl data, and publish 24/7.
+            </p>
+            <ul class="product-features-list">
+              <li>Full source code & daemon scripts</li>
+              <li>Zero cloud server cost (runs on your Mac/Linux)</li>
+              <li>Telegram bot alerting integrations</li>
+            </ul>
+            <a href="products.html" class="product-btn">Join Waitlist →</a>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <span class="product-badge green">FINANCIAL TOOL</span>
+            <h3 class="product-name">Micro-DCA Compounding Model</h3>
+            <p class="product-desc">
+              Dynamic financial projection spreadsheet modeling Australian ETF overlaps, dividend reinvestment, and Raiz micro-DCA.
+            </p>
+            <ul class="product-features-list">
+              <li>Google Sheets & Excel formats</li>
+              <li>Live 9.1% CAGR benchmark comparisons</li>
+              <li>Automatic portfolio concentration heatmaps</li>
+            </ul>
+            <a href="products.html" class="product-btn">Preview Sheet →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           CONTACT US SECTION (Requirement 4: Centered in middle of page,
+           street address & email removed, submits to trozanblaze@gmail.com)
+           ================================================================== -->
+      <section id="contact" class="contact-section-container">
+        <div class="contact-card">
+          <span class="contact-badge">GET IN TOUCH</span>
+          <h2 class="contact-title">Contact Us</h2>
+          <p class="contact-subtitle">
+            Questions, collaboration opportunities, or AI inquiries? Feel free to reach out — we'd love to hear from you.
+          </p>
+
+          <form id="contact-form" class="contact-form">
+            <div id="contact-status-msg" class="form-status-msg"></div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Name (required)</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email (required)</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Collaboration, AI prompt question, etc.">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea id="contact-message" name="message" class="form-textarea" placeholder="How can we help you?" required></textarea>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="form-submit-btn">
+              Send Query →
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           BOTTOM NEWSLETTER SECTION WITH CONFETTI (Requirement 9)
+           Zero excess bottom white space. Confetti fireworks on subscribe!
+           ================================================================== -->
+      <section id="newsletter" class="newsletter-card">
+        <span class="newsletter-badge">SUBSCRIBERS FEED</span>
+        <h2 class="newsletter-title">Join the Trozan Blaze Intelligence Feed</h2>
+        <p class="newsletter-desc">
+          Get bi-weekly market audits, battle-tested AI agent prompts, and Adelaide's top sports & dining updates straight to your inbox.
+        </p>
+
+        <!-- Dynamic Success Box (Shown on subscribe + confetti) -->
+        <div id="newsletter-success-box" class="newsletter-success-box"></div>
+
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your best email address..." required aria-label="Email Address">
+          <button type="submit" class="newsletter-btn">
+            Subscribe Now 🎉
+          </button>
+        </form>
+
+        <div class="newsletter-footer-meta">
+          ✨ Free Community Edition • Bi-Weekly Deep-Dives • No Spam Ever
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <span>•</span>
+        <a href="ai-news.html" class="footer-link">AI News</a>
+        <span>•</span>
+        <a href="products.html" class="footer-link">Products</a>
+        <span>•</span>
+        <a href="#contact" class="footer-link">Contact</a>
+        <span>•</span>
+        <a href="https://www.instagram.com/trozanblaze/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+        <span>•</span>
+        <a href="https://www.facebook.com/TrozanTalHa" target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
+      </div>
+      <div>
+        © 2026 TROZANBLAZE • Powered by Beastgravity Autonomous Agents • Adelaide, South Australia
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

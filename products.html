@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Products – Trozan Blaze</title>
+  <meta name="description" content="Production AI prompts, autonomous agent templates, and financial models by Trozan Blaze.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .products-header-banner {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(0, 255, 135, 0.15));
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .products-page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .product-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    .product-detail-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+      box-shadow: 0 12px 36px rgba(0, 242, 254, 0.2);
+    }
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 14px 0 16px;
+    }
+    .product-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: var(--font-mono);
+    }
+    .product-price-free {
+      color: var(--green);
+    }
+    .product-price-sub {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .vip-early-card {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(0, 242, 254, 0.18));
+      border: 2px solid var(--purple);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fullscreen Confetti Canvas Overlay -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="site-wrapper">
+
+    <!-- HEADER (Top whitespace < 1cm) -->
+    <header class="site-header">
+      <a href="index.html" class="brand-container">
+        <img src="assets/logo.jpg" alt="Trozan Blaze Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <div class="brand-name">
+            Trozan<span class="accent">Blaze</span>
+          </div>
+          <div class="brand-subtitle">AI Content Creator</div>
+        </div>
+      </a>
+
+      <!-- Right Top Menu Dropdown -->
+      <nav class="nav-menu-wrapper" aria-label="Main Navigation">
+        <button id="menu-toggle" class="menu-toggle-btn" aria-haspopup="true" aria-expanded="false">
+          <span>Menu</span>
+          <span class="menu-arrow">▾</span>
+        </button>
+        <ul id="menu-dropdown" class="menu-dropdown">
+          <li class="menu-item">
+            <a href="ai-news.html" class="menu-link">
+              <span>📰 AI News</span>
+              <span class="badge">5 Articles</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="products.html" class="menu-link">
+              <span>⚡ Products</span>
+              <span class="badge">Active</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="index.html#contact" class="menu-link">
+              <span>✉️ Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- LIVE WIRE TICKER -->
+    <div class="live-wire-container">
+      <div class="live-wire-badge">
+        <span class="pulsing-dot"></span>
+        <span id="ticker-date-badge">🔴 Live Wire</span>
+      </div>
+      <div class="ticker-track-wrapper">
+        <div class="ticker-track">
+          <div id="ticker-track-1" class="ticker-content">
+            <span class="ticker-item"><span class="tag">🔒 [VIP INSIDER]</span> Raiz 3-Year DCA Audit: Eliminating 37% Australian ETF Overlap</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [VIP PROMPT]</span> 15 Production AI Prompts That Make Life 10x Easier</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [ADELAIDE AFL]</span> Crows & Port Adelaide Pre-Season Tactical Breakdown</span>
+            <span class="ticker-divider">|</span>
+          </div>
+          <div id="ticker-track-2" class="ticker-content">
+            <span class="ticker-item"><span class="tag">🔒 [VIP INSIDER]</span> Raiz 3-Year DCA Audit: Eliminating 37% Australian ETF Overlap</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [VIP PROMPT]</span> 15 Production AI Prompts That Make Life 10x Easier</span>
+            <span class="ticker-divider">|</span>
+            <span class="ticker-item"><span class="tag">🔒 [ADELAIDE AFL]</span> Crows & Port Adelaide Pre-Season Tactical Breakdown</span>
+            <span class="ticker-divider">|</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Page Banner -->
+    <div class="products-header-banner">
+      <span class="bonus-badge">⚡ OFFICIAL DIGITAL STORE</span>
+      <h1 style="font-size:2.2rem;font-weight:800;color:#fff;margin:10px 0 8px">Trozan Blaze Digital Products</h1>
+      <p style="color:#e2e8f0;font-size:1rem;max-width:650px;margin:0 auto">
+        Production-ready prompt engineering vaults, autonomous agent source code, and mathematical micro-investing models created by Trozan Blaze.
+      </p>
+    </div>
+
+    <!-- Products Grid -->
+    <main class="products-page-grid">
+
+      <!-- Product 1: AI Prompt Vault -->
+      <div class="product-detail-card">
+        <span class="product-badge cyan">DIGITAL PROMPTS</span>
+        <h2 class="product-name">15 Production AI Prompts Vault</h2>
+        <p class="product-desc">
+          Battle-tested prompt templates engineered for immediate ROI across content publishing, technical architecture, and market intelligence gathering.
+        </p>
+
+        <div class="product-price-row">
+          <span class="product-price product-price-free">$0.00</span>
+          <span class="product-price-sub">Free VIP Community Edition</span>
+        </div>
+
+        <ul class="product-features-list">
+          <li>15 Full tested markdown prompt templates</li>
+          <li>Variable substitution syntax for Claude & Gemini</li>
+          <li>Autonomous multi-agent execution framework</li>
+          <li>Lifetime updates as new models ship</li>
+        </ul>
+
+        <a href="#early-access" class="product-btn" style="margin-top:auto">
+          Download Free VIP Pack →
+        </a>
+      </div>
+
+      <!-- Product 2: Autonomous Agent Blueprints -->
+      <div class="product-detail-card">
+        <span class="product-badge gold">COMING SOON</span>
+        <h2 class="product-name">Autonomous Agent Blueprints</h2>
+        <p class="product-desc">
+          Complete Python daemon codebase to run headless background AI agents that continuously monitor inboxes, crawl markets, and publish content 24/7.
+        </p>
+
+        <div class="product-price-row">
+          <span class="product-price">$49</span>
+          <span class="product-price-sub">Early Bird Pre-Order</span>
+        </div>
+
+        <ul class="product-features-list">
+          <li>Ready-to-run macOS / Linux daemon scripts</li>
+          <li>Zero server bills: runs locally in the background</li>
+          <li>Telegram Bot & WhatsApp live push alerts</li>
+          <li>Includes error-recovery and sleep-wake scheduling</li>
+        </ul>
+
+        <a href="#early-access" class="product-btn" style="margin-top:auto">
+          Join Early Bird Waitlist →
+        </a>
+      </div>
+
+      <!-- Product 3: ETF DCA Compounding Model -->
+      <div class="product-detail-card">
+        <span class="product-badge green">FINANCIAL TOOL</span>
+        <h2 class="product-name">Micro-DCA Compounding Model</h2>
+        <p class="product-desc">
+          Dynamic financial projection spreadsheet modeling Australian ETF overlaps (STW vs SFY vs VAS), dividend reinvestment, and Raiz micro-DCA.
+        </p>
+
+        <div class="product-price-row">
+          <span class="product-price">$19</span>
+          <span class="product-price-sub">One-time purchase</span>
+        </div>
+
+        <ul class="product-features-list">
+          <li>Google Sheets & Microsoft Excel (.xlsx)</li>
+          <li>Live 9.1% CAGR benchmark curves</li>
+          <li>Automated 37% overlap elimination calculator</li>
+          <li>Includes $5 Welcome Bonus activation workflow</li>
+        </ul>
+
+        <a href="#early-access" class="product-btn" style="margin-top:auto">
+          Claim Pre-Release Sheet →
+        </a>
+      </div>
+
+    </main>
+
+    <!-- Early Access & Product Notifications Box -->
+    <section id="early-access" class="vip-early-card">
+      <span class="newsletter-badge">VIP EARLY ACCESS</span>
+      <h2 class="newsletter-title">Get Notified When New Products Drop</h2>
+      <p class="newsletter-desc">
+        Enter your email to receive direct VIP download links and exclusive coupon codes for upcoming Trozan Blaze digital releases.
+      </p>
+
+      <div id="newsletter-success-box" class="newsletter-success-box"></div>
+
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email Address">
+        <button type="submit" class="newsletter-btn">
+          Get VIP Product Access 🎉
+        </button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <span>•</span>
+        <a href="ai-news.html" class="footer-link">AI News</a>
+        <span>•</span>
+        <a href="products.html" class="footer-link">Products</a>
+        <span>•</span>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+        <span>•</span>
+        <a href="https://www.instagram.com/trozanblaze/" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+        <span>•</span>
+        <a href="https://www.facebook.com/TrozanTalHa" target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
+      </div>
+      <div>
+        © 2026 TROZANBLAZE • Powered by Beastgravity Autonomous Agents • Adelaide, South Australia
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
